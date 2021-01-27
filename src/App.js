@@ -7,10 +7,11 @@ import { KShoes } from "./Components/KShoes";
 import { Error } from "./Components/Error";
 import { WmenIndex } from "./Components/WmenIndex";
 
+
 function App() {
   return (
     <div>
-      <nav>
+      {/* <nav>
         <Link to="/">Home</Link>
         <Link to="/women">Women</Link>
         <Link to="/men">Men</Link>
@@ -24,7 +25,9 @@ function App() {
         <Route exact path="/men" component={MShoes} />
         <Route exact path="/kids" component={KShoes} />
         <Route path="*" component={Error} />
-      </Switch>
+      </Switch> */}
+      
+
     </div>
   );
 }

@@ -1,53 +1,59 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CssBaseline from '@material-ui/core/CssBaseline';
-
-import Container from '@material-ui/core/Container';
-
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
-import Grid from '@material-ui/core/Grid';
+import { Shoes } from '../data/ShoesData';
 
-const useStyles = makeStyles({
+let firstFive = [];
+
+
+const useStyles = makeStyles((theme) => ({
 	root: {
+		flexGrow: 1,
 		
+	},
+	media: {
+		height: 200
 	}
-});
+}));
 
-export default function ImgMediaCard(props) {
-	const classes = useStyles();
+export default function CenteredGrid() {
+    const classes = useStyles();
+    
+    firstFive = Shoes.slice(0, 20);
+
 
 	return (
 		<div className={classes.root}>
 			<Grid container spacing={3}>
-				<CssBaseline />
-				<Container maxWidth="sm">
-					<Grid item xs>
+				{Object.entries(firstFive).map(([index,{ Brand, Images, Description}]) => (
+					<Grid key={index} item xs={12} sm={6} lg={4}>
+                    
 						<Card className={classes.root}>
 							<CardActionArea>
 								<CardMedia
-									component="img"
-									alt="Contemplative Reptile"
-									height="140"
-									image={props.img[0]}
-									title={props.brand}
+									className={classes.media}
+									image={Images[1]}
+									title="Shoes"
 								/>
+
 								<CardContent>
 									<Typography gutterBottom variant="h5" component="h2">
-										{props.brand}
+										{Brand}
 									</Typography>
 									<Typography variant="body2" color="textSecondary" component="p">
-										{props.disc}
+										{Description}
 									</Typography>
 								</CardContent>
 							</CardActionArea>
 						</Card>
 					</Grid>
-				</Container>
+				))}
 			</Grid>
 		</div>
 	);

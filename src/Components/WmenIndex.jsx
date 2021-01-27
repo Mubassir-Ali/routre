@@ -1,17 +1,25 @@
-import React from "react";
+import { Shoes } from '../data/ShoesData';
+// import ImgMediaCard from './Card';
+import Card from './Card'
+import Cards from './Cards'
 
-import ImgMediaCard from './Card'
+let firstFive = [];
+
+const WmenIndex = () => {
 
 
+	firstFive = Shoes.slice(0, 10);
 
-export const WmenIndex = () => {
+	console.log(firstFive);
 
-
-
-  return (
-    <div>
-     <ImgMediaCard/>
-    </div>
-  );
+	return (
+		<div>
+			{Object.entries(firstFive).map(([ slug, { Brand, Images, Description } ]) => (
+				<Card brand={Brand} img={Images} disc={Description} />
+			))}
+		</div>
+	);
 };
+
+export default WmenIndex
 

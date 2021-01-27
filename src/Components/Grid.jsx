@@ -32,7 +32,7 @@ export default function CenteredGrid() {
 		<div className={classes.root}>
 			<Grid container spacing={3}>
 				{Object.entries(firstFive).map(([index,{ Brand, Images, Description}]) => (
-					<Grid key={index} item xs={12} sm={6} lg={4}>
+					<Grid key={index} item xs={12} sm={6} lg={3}>
                     
 						<Card className={classes.root}>
 							<CardActionArea>

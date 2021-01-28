@@ -93,3 +93,11 @@ nav :link{
 li{
     list-style: none;
 }
+
+.discount{
+    text-decoration: line-through;
+    color: red;
+}
+.newPrice{
+    color: green;
+}

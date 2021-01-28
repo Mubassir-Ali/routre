@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 import { Shoes } from "../data/ShoesData";
-
-
 
 let brand = [];
 let unique = [];
@@ -11,45 +9,40 @@ let pro = [];
 let uniqueProduct = [];
 
 export const DataManipulation = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  // console.log(Shoes[0].Brand);
 
+  for (let i = 0; i < Shoes.length; i++) {
+    brand.push(Shoes[i].Brand);
+  }
 
-console.log(Shoes[0].Brand);
+  // console.log(brand);
 
-for (let i = 0; i < Shoes.length; i++) {
-  brand.push(Shoes[i].Brand);
-}
+  unique = brand.filter((item, i, arr) => arr.indexOf(item) === i);
 
-console.log(brand);
+  console.log(unique);
 
-unique = brand.filter((item, i, arr) => arr.indexOf(item) === i);
+  for (let i = 0; i < Shoes.length; i++) {
+    productName.push(Shoes[i]["Product Name"]);
+  }
 
-console.log(unique);
+  for (let i = 0; i < Shoes.length; i++) {
+    productNameArray[i] = productName[i].split(" ");
+  }
 
-for (let i = 0; i < Shoes.length; i++) {
-  productName.push(Shoes[i]["Product Name"]);
-}
+  // console.log(productNameArray[0][2]);
 
-for (let i = 0; i < Shoes.length; i++) {
-  productNameArray[i] = productName[i].split(" ");
-}
+  for (let i = 0; i < Shoes.length; i++) {
+    pro[i] = productNameArray[i][0];
+  }
 
-console.log(productNameArray[0][2]);
+  delete pro[1557];
 
-for (let i = 0; i < Shoes.length; i++) {
-  pro[i] = productNameArray[i][0];
-}
+  let names = pro.slice(0, pro.length - 1);
+  let convertedNames = names.map((names) => names.toLowerCase());
 
-delete pro[1557]
-
-let names = pro.slice(0, pro.length-1);
-let convertedNames = names.map((names) => names.toLowerCase());
-
-uniqueProduct = convertedNames.filter((item, index, arr) => arr.indexOf(item) === index);
-console.log(uniqueProduct);
-
+  uniqueProduct = convertedNames.filter(
+    (item, index, arr) => arr.indexOf(item) === index
+  );
+  console.log(uniqueProduct);
+  return <div></div>;
+};

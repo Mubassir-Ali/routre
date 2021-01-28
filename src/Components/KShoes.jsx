@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
+import {ShoesFilter} from './ShoesFilter';
 
 export const KShoes = () => {
     return (
-        <div>
-            <h1>Kids Shoes</h1>
-        </div>
+        <ShoesFilter gender="Unisex" start={0} end={20}/>
     )
 }

@@ -1,10 +1,8 @@
-import React from 'react'
+import React from 'react';
+import {ShoesFilter} from './ShoesFilter'
 
 export const MShoes = () => {
     return (
-        <div>  
-        <h1>Men Shoes</h1>
-            
-        </div>
+        <ShoesFilter gender="Men's" start={0} end={20} />
     )
 }

@@ -1,10 +1,11 @@
-import React from 'react'
+import React from "react";
+import {ShoesFilter} from './ShoesFilter'
+
 
 export const WShoes = () => {
-    return (
-        <div>
-        <h1>Women Shoes</h1>
-            
-        </div>
-    )
-}
+  // start={0} end='wShoes.length' 
+  return (
+    <ShoesFilter gender="Women's" start={0} end={20}/>
+  
+  );
+};

@@ -19,7 +19,7 @@ export default function CenteredGrid(props) {
   const classes = useStyles();
 
 
-console.log(props);
+
   return (
     <Card className={classes.root}>
       <CardActionArea>

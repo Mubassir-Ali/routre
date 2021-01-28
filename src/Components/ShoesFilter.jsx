@@ -16,6 +16,7 @@ let productName = [];
 let womenShoesList = [];
 let womenShoes = [];
 let wShoes = [];
+let rShoes=[];
 
 export const ShoesFilter = (props) => {
   const classes = useStyles();
@@ -34,7 +35,11 @@ export const ShoesFilter = (props) => {
     wShoes[i] = Shoes[indices[i]];
   }
 
+
+
   range = wShoes.slice(props.start, props.end);
+
+
 
   return (
     <div className={classes.root}>

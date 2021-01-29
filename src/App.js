@@ -23,6 +23,9 @@ function App() {
 
 				<div className="menu">
 					<ul>
+					<a href="/">
+							<li>Home</li>
+						</a>
 						<a href="/men">
 							<li>Men</li>
 						</a>
@@ -34,11 +37,12 @@ function App() {
 						</a>
 					</ul>
 				</div>
+				<div className="search"></div>
 			</div>
 			{/* <DataManipulation/> */}
-			<TestCard />
+			{/* <TestCard /> */}
 
-			{/* <div className='container'>
+			<div className='container'>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/women" component={WShoes} />
@@ -46,7 +50,7 @@ function App() {
           <Route exact path="/kids" component={KShoes} />
           <Route path="*" component={Error} />
         </Switch>
-      </div> */}
+      </div>
 		</div>
 	);
 }

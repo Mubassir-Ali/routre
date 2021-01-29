@@ -16,30 +16,28 @@ let productName = [];
 let womenShoesList = [];
 let womenShoes = [];
 let wShoes = [];
-let rShoes=[];
+let rShoes = [];
 
 export const ShoesFilter = (props) => {
   const classes = useStyles();
+  if (props.gender) {
+    for (let i = 0; i < Shoes.length; i++) {
+      productName.push(Shoes[i]["ProductName"]);
+      womenShoesList[i] = productName[i].split(" ");
+      womenShoes.push(womenShoesList[i][0]);
+    }
 
-  for (let i = 0; i < Shoes.length; i++) {
-    productName.push(Shoes[i]["ProductName"]);
-    womenShoesList[i] = productName[i].split(" ");
-    womenShoes.push(womenShoesList[i][0]);
+    let indices = womenShoes
+      .map((e, i) => (e === props.gender ? i : ""))
+      .filter(String);
+
+    for (let i = 0; i < indices.length; i++) {
+      wShoes[i] = Shoes[indices[i]];
+    }
+    range = wShoes.slice(props.start, props.end);
+  }else{
+    range = Shoes.slice(props.start, props.end);
   }
-
-  let indices = womenShoes
-    .map((e, i) => (e === props.gender ? i : ""))
-    .filter(String);
-
-  for (let i = 0; i < indices.length; i++) {
-    wShoes[i] = Shoes[indices[i]];
-  }
-
-
-
-  range = wShoes.slice(props.start, props.end);
-
-
 
   return (
     <div className={classes.root}>

@@ -1,17 +1,30 @@
-import React from 'react'
+import React,{useState} from "react";
 
+let imgNumber=[1,2,3,4,5,6];
+const imgUrl=(imgNumber)=>{
+    return `https://content.adidas.co.in/static/Product-AH2430/WOMEN_Originals_SHOES_LOW_AH2430_${imgNumber}.jpg`
+} 
 export const TestCard = () => {
-    return (
-        <div className='card-container'>
-        <div className='card'>
-        <img src='https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/i1-adf7ff56-ce20-459a-b4a7-fdaae1afa959/image.jpg'></img>
-        <img src='https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/i1-adf7ff56-ce20-459a-b4a7-fdaae1afa959/image.jpg'></img>
-        <img src='https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/i1-adf7ff56-ce20-459a-b4a7-fdaae1afa959/image.jpg'></img>
-        <img src='https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/i1-adf7ff56-ce20-459a-b4a7-fdaae1afa959/image.jpg'></img>
-        <img src='https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/i1-adf7ff56-ce20-459a-b4a7-fdaae1afa959/image.jpg'></img>
+const [img,setImg]=useState(1)
+
+console.log(img);
+
+  return (
+    <div className="card-container">
+      <div className="card">
+        <div className='main-images'>
+          <img src={imgUrl(img)}></img>
+          
         </div>
-        
-                   
+        <div className="sub-images">
+
+        {imgNumber.map((d,i)=>{
+            return <img keys={i} src={imgUrl(d)} ></img>
+
+        })}
+  
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};

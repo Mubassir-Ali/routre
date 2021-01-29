@@ -11,7 +11,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   media: {
-    height: 200,
+    height: 300,
+    position: 'relative'
   },
 }));
 
@@ -22,14 +23,20 @@ export default function CenteredGrid(props) {
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
+      <CardActionArea className="cardActionArea">
+      <Typography className='cardContent-discount' variant="body2" component="p" align="center">
+         Discount: {props.discount}%
+        </Typography>
         <CardMedia
           className={classes.media}
           image={props.images[0]}
           title="Shoes"
+          
         />
+   
+       
       </CardActionArea>
-      <CardContent>
+      <CardContent className='cardContent'>
         <Typography component="p" align='left' variant="body2">
           BRAND: {props.brand}
         </Typography>
@@ -39,9 +46,7 @@ export default function CenteredGrid(props) {
         <Typography variant="body2" color="textSecondary" component="p" align="justify">
         <span className='newPrice'>${Math.floor(props.salePrice/150)} </span><span className='discount'>${Math.floor(props.listingPrice/150)}</span>  
         </Typography>
-        <Typography variant="body2" color="textSecondary" component="p" align="justify">
-         Discount: {props.discount}%
-        </Typography>
+      
  
       </CardContent>
     </Card>

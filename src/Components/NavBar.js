@@ -6,7 +6,7 @@ export const NavBar = () => {
         <div className="page-top" />
 			<div className="nav-bar">
 				<div className="logo">
-					<img src={logo} />
+					<img src={logo} alt ="logo"/>
 				</div>
 
 				<div className="menu">

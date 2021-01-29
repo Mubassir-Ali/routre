@@ -33,10 +33,22 @@ export const ShoesFilter = (props) => {
 
     for (let i = 0; i < indices.length; i++) {
       wShoes[i] = Shoes[indices[i]];
+    
     }
-    range = wShoes.slice(props.start, props.end);
+    for(let i=0;i<wShoes.length;i++){
+      let rand=Math.floor(Math.random()*wShoes.length-1)
+      rShoes[i]=wShoes[rand]
+    }
+
+    range = rShoes.slice(props.start, props.end);
   }else{
-    range = Shoes.slice(props.start, props.end);
+    
+    for(let i=0;i<Shoes.length;i++){
+      let rand=Math.floor(Math.random()*Shoes.length-1)
+      rShoes[i]=Shoes[rand]
+    }
+
+    range = rShoes.slice(props.start, props.end);
   }
 
   return (

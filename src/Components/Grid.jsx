@@ -16,16 +16,28 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+let ShoesList;
+// let filterShoes=[];
+
+
 export default function CenteredGrid(props) {
   const classes = useStyles();
+  ShoesList=props.prodName.split(" ");
 
+//   for(let i=0;i<ShoesList.length;i++){
+//     filterShoes[i]=ShoesList[i][0];
+//   }
+  
+  
 
+console.log(ShoesList[0]);
 
   return (
     <Card className={classes.root}>
       <CardActionArea className="cardActionArea">
       <Typography className='cardContent-discount' variant="body2" component="p" align="center">
-         Discount: {props.discount}%
+         {props.discount}% OFF
         </Typography>
         <CardMedia
           className={classes.media}
@@ -37,6 +49,9 @@ export default function CenteredGrid(props) {
        
       </CardActionArea>
       <CardContent className='cardContent'>
+      <Typography variant="body2" color="textSecondary" component="p" align="justify">
+          {ShoesList[0].toUpperCase()}
+        </Typography>
         <Typography component="p" align='left' variant="body2">
           BRAND: {props.brand}
         </Typography>
@@ -44,7 +59,10 @@ export default function CenteredGrid(props) {
           ID: {props.pid}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p" align="justify">
-        <span className='newPrice'>${Math.floor(props.salePrice/150)} </span><span className='discount'>${Math.floor(props.listingPrice/150)}</span>  
+        {props.discount>0?
+        <div className="productOff"><span className='newPrice'>${Math.floor(props.salePrice/150)} </span>
+        <span className='discount'>${Math.floor(props.listingPrice/150)}</span></div>
+        : <span className='newPrice'>${Math.floor(props.salePrice/150)} </span>}
         </Typography>
       
  

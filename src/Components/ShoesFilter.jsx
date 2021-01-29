@@ -12,22 +12,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 let range = [];
-let productName = [];
-let womenShoesList = [];
-let womenShoes = [];
+let pName = [];
+let ShoesList = [];
+let filterShoes = [];
 let wShoes = [];
 let rShoes = [];
 
 export const ShoesFilter = (props) => {
   const classes = useStyles();
-  if (props.gender) {
-    for (let i = 0; i < Shoes.length; i++) {
-      productName.push(Shoes[i]["ProductName"]);
-      womenShoesList[i] = productName[i].split(" ");
-      womenShoes.push(womenShoesList[i][0]);
-    }
 
-    let indices = womenShoes
+  for (let i = 0; i < Shoes.length; i++) {
+    pName.push(Shoes[i]["ProductName"]);
+    ShoesList[i] = pName[i].split(" ");
+    filterShoes.push(ShoesList[i][0]);
+  }
+
+  if (props.gender) {
+     let indices = filterShoes
       .map((e, i) => (e === props.gender ? i : ""))
       .filter(String);
 
@@ -65,6 +66,10 @@ export const ShoesFilter = (props) => {
               ListingPrice,
               SalePrice,
               Discount,
+              ProductName
+              
+
+
             },
           ]) => (
             <Grid key={index} item xs={12} sm={6} lg={3}>
@@ -76,6 +81,8 @@ export const ShoesFilter = (props) => {
                 listingPrice={ListingPrice}
                 salePrice={SalePrice}
                 discount={Discount}
+                prodName={ProductName}
+               
               />
             </Grid>
           )

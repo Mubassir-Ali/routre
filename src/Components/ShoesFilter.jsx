@@ -66,7 +66,8 @@ export const ShoesFilter = (props) => {
               ListingPrice,
               SalePrice,
               Discount,
-              ProductName
+              ProductName,
+              URL
               
 
 
@@ -82,6 +83,7 @@ export const ShoesFilter = (props) => {
                 salePrice={SalePrice}
                 discount={Discount}
                 prodName={ProductName}
+                url={URL}
                
               />
             </Grid>

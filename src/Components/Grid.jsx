@@ -6,6 +6,8 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -31,10 +33,11 @@ export default function CenteredGrid(props) {
   
   
 
-console.log(ShoesList[0]);
+console.log(props);
 
   return (
     <Card className={classes.root}>
+      <a href={props.images[0]}>
       <CardActionArea className="cardActionArea">
       <Typography className='cardContent-discount' variant="body2" component="p" align="center">
          {props.discount}% OFF
@@ -44,10 +47,11 @@ console.log(ShoesList[0]);
           image={props.images[0]}
           title="Shoes"
           
-        />
-   
-       
-      </CardActionArea>
+        /> 
+       </CardActionArea>
+
+      </a>
+
       <CardContent className='cardContent'>
       <Typography variant="body2" color="textSecondary" component="p" align="justify">
           {ShoesList[0].toUpperCase()}
@@ -60,9 +64,9 @@ console.log(ShoesList[0]);
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p" align="justify">
         {props.discount>0?
-        <div className="productOff"><span className='newPrice'>${Math.floor(props.salePrice/150)} </span>
-        <span className='discount'>${Math.floor(props.listingPrice/150)}</span></div>
-        : <span className='newPrice'>${Math.floor(props.salePrice/150)} </span>}
+        <div className="productOff"><span className='newPrice'>${Math.floor(props.salePrice/72.88)} </span>
+        <span className='discount'>${Math.floor(props.listingPrice/72.88)}</span></div>
+        : <span className='newPrice'>${Math.floor(props.salePrice/72.88)} </span>}
         </Typography>
       
  

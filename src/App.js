@@ -1,28 +1,26 @@
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home } from './Components/Home';
 import { WShoes } from './Components/WShoes';
 import { MShoes } from './Components/MShoes';
 import { KShoes } from './Components/KShoes';
-import { Error } from './Components/Error';
-import { NavBar } from './Components/NavBar';
-
+import {NavBar} from './Components/NavBar'
 
 function App() {
 	return (
 		<div>
-			<NavBar />
+			<Router>
+				<NavBar/>
 
-			<div className="container">
-				<Switch>
-					<Route exact path="/" component={Home} />
-					<Route exact path="/women" component={WShoes} />
-					<Route exact path="/men" component={MShoes} />
-					<Route exact path="/kids" component={KShoes} />
-					
-					
-					<Route path="*" component={Error} />
-				</Switch>
-			</div>
+				<div className="container">
+					<Switch>
+						<Route exact path="/" render={() => <Home />} />
+						<Route exact path="/men" render={() => <MShoes />} />
+
+						<Route exact path="/women" render={() => <WShoes />} />
+						<Route exact path="/kids" render={() => <KShoes />} />
+					</Switch>
+				</div>
+			</Router>
 		</div>
 	);
 }

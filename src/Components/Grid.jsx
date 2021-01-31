@@ -33,13 +33,13 @@ export default function CenteredGrid(props) {
   
   
 
-console.log(props);
+
 
   return (
     <Card className={classes.root}>
       <a href={props.images[0]}>
       <CardActionArea className="cardActionArea">
-      <Typography className='cardContent-discount' variant="body2" component="p" align="center">
+      <Typography className='cardContent-discount' component={'div'} variant={'body2'} align="center">
          {props.discount}% OFF
         </Typography>
         <CardMedia
@@ -53,16 +53,16 @@ console.log(props);
       </a>
 
       <CardContent className='cardContent'>
-      <Typography variant="body2" color="textSecondary" component="p" align="justify">
+      <Typography variant="body2" color="textSecondary" component={'div'} align="justify">
           {ShoesList[0].toUpperCase()}
         </Typography>
-        <Typography component="p" align='left' variant="body2">
+        <Typography component={'div'} align='left' variant="body2">
           BRAND: {props.brand}
         </Typography>
-        <Typography variant="body2" color="textSecondary" component="p" align="justify">
+        <Typography variant="body2" color="textSecondary" component={'div'} align="justify">
           ID: {props.pid}
         </Typography>
-        <Typography variant="body2" color="textSecondary" component="p" align="justify">
+        <Typography variant="body2" color="textSecondary" component={'div'} align="justify">
         {props.discount>0?
         <div className="productOff"><span className='newPrice'>${Math.floor(props.salePrice/72.88)} </span>
         <span className='discount'>${Math.floor(props.listingPrice/72.88)}</span></div>

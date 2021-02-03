@@ -5,7 +5,8 @@ import { MShoes } from './Components/MShoes';
 import { KShoes } from './Components/KShoes';
 import {NavBar} from './Components/NavBar';
 import {Error} from './Components/Error';
-import {Footer} from './Components/Footer'
+import {Footer} from './Components/Footer';
+
 
 function App() {
 	return (
@@ -14,10 +15,11 @@ function App() {
 				<NavBar/>
 				<div className="container">
 					<Switch>
-						<Route exact path="/" render={() => <Home />} />
+						<Route exact path="/" render={() => <Home />} />												
 						<Route exact path="/men" render={() => <MShoes />} />
 						<Route exact path="/women" render={() => <WShoes />} />
 						<Route exact path="/kids" render={() => <KShoes />} />
+						
 						<Route  path="*" render={() => <Error />} />
 					</Switch>
 					

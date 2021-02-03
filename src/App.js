@@ -4,7 +4,8 @@ import { WShoes } from './Components/WShoes';
 import { MShoes } from './Components/MShoes';
 import { KShoes } from './Components/KShoes';
 import {NavBar} from './Components/NavBar';
-import {Error} from './Components/Error'
+import {Error} from './Components/Error';
+import {Footer} from './Components/Footer'
 
 function App() {
 	return (
@@ -19,7 +20,9 @@ function App() {
 						<Route exact path="/kids" render={() => <KShoes />} />
 						<Route  path="*" render={() => <Error />} />
 					</Switch>
+					
 				</div>
+				<Footer/>
 			</Router>
 		</div>
 	);

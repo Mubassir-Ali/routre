@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-const logo = 'https://freepngimg.com/thumb/adidas/58143-stan-logo-smith-shoe-adidas-free-frame-thumb.png';
+import { NavLink } from 'react-router-dom';
+const logo = 'https://download.logo.wine/logo/Adidas/Adidas-Logo.wine.png';
 export const NavBar = () => {
 	return (
 		<React.Fragment>
@@ -12,10 +12,10 @@ export const NavBar = () => {
 
 				<div className="menu">
 					<ul>
-						<Link to="/"><li>Home</li></Link>
-						<Link to="/men"><li>Men</li></Link>
-						<Link to="/women"><li>Women</li></Link>
-						<Link to="/kids"><li>Kids</li></Link>
+						<NavLink exact activeClassName='active-class' to="/"><li>Home</li></NavLink>
+						<NavLink exact activeClassName='active-class' to="/men"><li>Men</li></NavLink>
+						<NavLink exact activeClassName='active-class' to="/women"><li>Women</li></NavLink>
+						<NavLink exact activeClassName='active-class' to="/kids"><li>Kids</li></NavLink>
 					</ul>
 				</div>
 				<div className="search" />
